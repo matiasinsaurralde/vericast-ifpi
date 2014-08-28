@@ -31,7 +31,3 @@ module VericastIFPI
   end
 
 end
-
-include VericastIFPI
-
-song_lookup artist: 'nirvana', track: 'come as you are', country: 'us'
