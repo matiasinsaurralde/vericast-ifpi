@@ -22,7 +22,8 @@ module VericastIFPI
     if matches
       number_of_results = matches[1].to_i
       page.xpath("//table[contains(@class, 'table table-striped')]/tbody/tr").each do |tr|
-        p tr.xpath(".//td/text()").map { |e| e.inner_text().strip() }
+        values = tr.xpath(".//td/text()").map { |e| e.inner_text().strip() }
+        results << Song.new( values[0], values[1], values[2], values[3] )
       end
     end
 
